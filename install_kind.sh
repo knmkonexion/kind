@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export TERM=xterm
+
 clear
 echo 'This script will download and set up KinD:'
 
