@@ -12,19 +12,37 @@ pipeline {
 
   stages {
 
-    stage('KinD Version and Params') {
+    stage('KinD Version') {
       steps {
         sh """
           echo 'KinD Version is: ${KIND_VERSION}'
-          echo 'Creating cluster: ${CLUSTER_NAME}'
         """
       }
     }
   
-    stage('List Files') {
+    stage('Any Clusters?') {
       steps {
-        sh('ls -alh')
+        sh """
+          kind get custers
+        """
       }
     }
+
+    stage('Create Cluster') {
+      steps {
+        sh """
+          ./create_cluster ${CLUSTER_NAME}
+        """
+      }
+    }
+    
+    stage('List Clusters') {
+      steps {
+        sh """
+          kind get custers
+        """
+      }
+    }
+
   }
 }
