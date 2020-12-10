@@ -12,18 +12,10 @@ pipeline {
 
   stages {
 
-    stage('KinD Version') {
+    stage('Install KinD') {
       steps {
         sh """
-          echo 'KinD Version is: ${KIND_VERSION}'
-        """
-      }
-    }
-  
-    stage('Any Clusters?') {
-      steps {
-        sh """
-          kind get custers
+          ./install_kind.sh
         """
       }
     }
