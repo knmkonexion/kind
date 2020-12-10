@@ -23,7 +23,7 @@ pipeline {
     stage('Create Cluster') {
       steps {
         sh """
-          ./create_cluster ${CLUSTER_NAME}
+          ./create_cluster.sh ${CLUSTER_NAME}
         """
       }
     }
