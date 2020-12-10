@@ -13,7 +13,7 @@ curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0
 chmod a+x ./kind
 
 # Move the binary to your executable path
-sudo mv ./kind /usr/local/bin/
+mv ./kind /usr/local/bin/
 
 clear
 echo 'SUCCESS: KinD installed'
