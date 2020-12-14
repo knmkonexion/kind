@@ -14,11 +14,11 @@ fi
 cluster_exists=$(kind get clusters)
 if [ "${cluster_exists}" == "${cluster_name}" ]; then
   echo 'Cluster exists! Cluster WILL NOT be created, skipping....'
-  echo 'Cluster Info:'
-  kubectl cluster-info --context kind-${cluster_name}
+  echo 'Cluster Deployed:'
+  kind get clusters
 else
   echo "Creating cluster ${cluster_name}"
   kind create cluster --name ${cluster_name}
-  echo 'Cluster Info:'
-  kubectl cluster-info --context kind-${cluster_name}
+  echo 'Cluster Deployed:'
+  kind get clusters
 fi
