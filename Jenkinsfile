@@ -3,7 +3,7 @@ pipeline {
   agent { label 'master' }
 
   parameters {
-    string(name: 'CLUSTER_NAME', defaultValue: 'k8s-test', description: 'What do you want to name you K8s/KinD cluster?')
+    string(name: 'CLUSTER_NAME', defaultValue: 'k8s-test', description: 'What do you want to name your K8s/KinD cluster?')
   }
 
   environment {
