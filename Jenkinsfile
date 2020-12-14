@@ -31,7 +31,7 @@ pipeline {
     stage('List Clusters') {
       steps {
         sh """
-          kind get custers
+          kind get clusters
         """
       }
     }
